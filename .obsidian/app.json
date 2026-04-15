@@ -18,5 +18,5 @@
   "openBehavior": "file:OMOOSPACE",
   "newFileLocation": "folder",
   "newFileFolderPath": "notes",
-  "newLinkFormat": "absolute"
+  "newLinkFormat": "relative"
 }

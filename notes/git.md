@@ -5,6 +5,7 @@
 - 不时地，接收其他人在「主分支」的改动
 - 通过「合并请求」，有监督地把确认改动到「主分支」（团队审核个人）
 
+
 ```mermaid
 flowchart LR
   文件改动 -- 提交 --> 个人分支 -- 合并请求 --> 主分支
@@ -17,7 +18,7 @@ flowchart LR
 
 浏览器打开仓库地址 <https://git.omoolab.xyz/[orgn-name]/[repo-name]>，点右上的 Code 按钮，点击 Open with VS Code
 
-![](notes/assets/Pasted%20image%2020260415192621.png)
+![](assets/Pasted%20image%2020260415192621.png)
 
 > 或 Bash 执行 `git clone [repo.git]`
 
@@ -26,13 +27,13 @@ flowchart LR
 
 点左下角的`main`，点击`Create new branch...`，然后输入分支名`[your-name]/[do-something]`(比如`manan/dev`)
 
-![](notes/assets/Pasted%20image%2020260415201156.png)
+![](assets/Pasted%20image%2020260415201156.png)
 
 > 或 Bash 执行 `git checkout -b [your-name]/[do-something]`
 
 创建后，首次推送分支到远程。这样远程也有属于你的分支了
 
-![](notes/assets/Pasted%20image%2020260415201626.png)
+![](assets/Pasted%20image%2020260415201626.png)
 
 > 或 Bash 执行 `git push -u origin [branch-name]`
 
@@ -43,7 +44,7 @@ flowchart LR
 
 仓库的任何改动都会罗列在 Changes 下，此时它们都是暂时的。点击 + 来添加到 Staged Changes 下（你可以只添加部分改动）
 
-![](notes/assets/Pasted%20image%2020260415202442.png)
+![](assets/Pasted%20image%2020260415202442.png)
 
 > 或 Bash 执行 `git add [file]`
 
@@ -51,7 +52,7 @@ flowchart LR
 
 手动输入 Commit Message 来说明改动了什么，或者点击小星按钮让 AI 来帮忙总结。最后点击 Commit，完成「提交」。至此改动才被确认，记录到了 Git History 中。
 
-![](notes/assets/Pasted%20image%2020260415202608.png)
+![](assets/Pasted%20image%2020260415202608.png)
 
 > 或 Bash 执行 `git commit -m [message]`
 
@@ -59,7 +60,7 @@ flowchart LR
 
 **3. 同步到远程的「个人分支」**
 
-![](notes/assets/Pasted%20image%2020260415202931.png)
+![](Pasted%20image%2020260415202931.png)
 
 > 或 Bash 执行 `git push`
 
@@ -71,7 +72,7 @@ flowchart LR
 
 点击 Pull from...，并选择`origin/main`（注意不是`main`分支，它是本地的，并非最新）
 
-![](notes/assets/Pasted%20image%2020260415230956.png)
+![](assets/Pasted%20image%2020260415230956.png)
 
 > 或 Bash 执行 `git pull origin main`
 
@@ -83,15 +84,15 @@ flowchart LR
 
 浏览器访问仓库主页，切换到「个人分支」，点击 New Pull Request 按钮（3）
 
-![](notes/assets/Pasted%20image%2020260415232911.png)
+![](assets/Pasted%20image%2020260415232911.png)
 
 确认一下合并方向是否正确，然后填写 PR 标题和内容（改了什么，加了什么），最后点击 Create Pull Request
 
-![](notes/assets/Pasted%20image%2020260415233225.png)
+![](assets/Pasted%20image%2020260415233225.png)
 
 PR 会加入队列，等待审核通过。通过后就会合并到`main`
 
-![](notes/assets/Pasted%20image%2020260415233620.png)
+![](assets/Pasted%20image%2020260415233620.png)
 
 > 注意，如果在提 PR 后，如果你又更新了你的分支，不必再次提 PR
 
