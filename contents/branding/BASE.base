@@ -1,0 +1,12 @@
+formulas:
+  cover: file
+views:
+  - type: cards
+    name: Table
+    filters:
+      and:
+        - file.inFolder("contents/branding")
+    order:
+      - file.name
+      - formula.cover
+    image: formula.cover
