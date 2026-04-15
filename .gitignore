@@ -1,0 +1,14 @@
+# claude
+.claudian
+
+# obsidian setting
+.obsidian/*
+!.obsidian/snippets
+!.obsidian/app.json
+
+# tempary files
+temp
+sandbox.*
+
+# blender
+*.blend1
