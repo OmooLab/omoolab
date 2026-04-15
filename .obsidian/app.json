@@ -17,6 +17,6 @@
   "alwaysUpdateLinks": true,
   "openBehavior": "file:OMOOSPACE",
   "newFileLocation": "folder",
-  "newFileFolderPath": "Notes",
+  "newFileFolderPath": "notes",
   "newLinkFormat": "absolute"
 }
