@@ -24,7 +24,7 @@ flowchart LR
 
 浏览器打开仓库地址 <https://git.omoolab.xyz/[orgn-name]/[repo-name]>，点右上的 Code 按钮，点击 Open with VS Code
 
-![](assets/Pasted%20image%2020260415192621.png)
+![](assets/git-clone.png)
 
 > 或 Bash 执行 `git clone [repo.git]`
 
@@ -35,13 +35,13 @@ flowchart LR
 
 点左下角的`main`，点击 Create new branch...，然后输入分支名`[your-name]/[do-something]`(比如`manan/dev`)
 
-![](assets/Pasted%20image%2020260415201156.png)
+![](assets/git-create-branch.png)
 
 > 或 Bash 执行 `git checkout -b [your-name]/[do-something]`
 
 创建后，首次推送分支到远程。这样远程也有属于你的分支了
 
-![](assets/Pasted%20image%2020260415201626.png)
+![](assets/git-publish-branch.png)
 
 > 或 Bash 执行 `git push -u origin [branch-name]`
 
@@ -53,7 +53,7 @@ flowchart LR
 
 仓库的任何改动都会罗列在 Changes 下，此时它们并没有得到确认。点击 + 来添加到 Staged Changes 下（你可以只添加部分改动）
 
-![](assets/Pasted%20image%2020260415202442.png)
+![](assets/git-add.png)
 
 > 或 Bash 执行 `git add [file]`
 
@@ -61,7 +61,7 @@ flowchart LR
 
 输入「提交说明」来记录改动了什么（或者点击小星按钮让 AI 来帮忙总结）。点击 Commit 按钮来确认改动。
 
-![](assets/Pasted%20image%2020260415202608.png)
+![](assets/git-commit.png)
 
 > 或 Bash 执行 `git commit -m [message]`
 
@@ -69,7 +69,7 @@ flowchart LR
 
 点击三个点按钮打开菜单，点击 Push 按钮
 
-![](Pasted%20image%2020260415202931.png)
+![](assets/git-push.png)
 
 > 或 Bash 执行 `git push`
 
@@ -81,7 +81,7 @@ flowchart LR
 
 点击三个点按钮打开菜单，点击 Pull from...，并选择`origin/main`（注意不是`main`分支，它是本地的，并非最新）
 
-![](assets/Pasted%20image%2020260415230956.png)
+![](assets/git-pull-origin-main.png)
 
 > 或 Bash 执行 `git pull origin main`
 
@@ -93,15 +93,15 @@ flowchart LR
 
 浏览器访问仓库主页，切换到「个人分支」，点击 New Pull Request 按钮（3）
 
-![](assets/Pasted%20image%2020260415232911.png)
+![](assets/git-checkout-feat.png)
 
 确认一下合并方向是否正确，然后填写 PR 标题和内容（改了什么，加了什么），最后点击 Create Pull Request
 
-![](assets/Pasted%20image%2020260415233225.png)
+![](assets/git-pull-request.png)
 
 PR 会加入队列，等待审核通过。通过后就会合并到`main`啦。
 
-![](assets/Pasted%20image%2020260415233620.png)
+![](assets/git-pr-list.png)
 
 > 注意，如果在提 PR 后，如果你又更新了你的分支，不必再次提 PR
 
