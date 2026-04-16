@@ -125,6 +125,3 @@
 *.ome                   lfs
 *.map                   lfs
 *.mrc                   lfs
-
-notes/assets/*.png     -lfs
-notes/assets/*.jpeg    -lfs

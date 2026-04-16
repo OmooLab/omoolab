@@ -28,6 +28,8 @@ flowchart LR
 
 > 或 Bash 执行 `git clone [repo.git]`
 
+> 默认不拉取大文件，以确保本地仓库体积
+> Bash 执行 `git lfs pull --include [folder]` 来下载仅需要的大文件
 
 **2. 创建自己的个人分支**
 

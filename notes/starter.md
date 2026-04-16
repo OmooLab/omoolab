@@ -27,8 +27,9 @@ git config --global user.email  [your-email]
 初始化 lfs 以获取对大文件的支持
 
 ```bash
-git lfs install
+git lfs install --skip-smudge
 ```
+
 
 ## 安装 VS Code
 
