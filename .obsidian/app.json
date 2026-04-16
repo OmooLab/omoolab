@@ -15,7 +15,7 @@
   "livePreview": true,
   "showIndentGuide": false,
   "alwaysUpdateLinks": true,
-  "openBehavior": "file:OMOOSPACE",
+  "openBehavior": "file:README",
   "newFileLocation": "folder",
   "newFileFolderPath": "notes",
   "newLinkFormat": "relative"
