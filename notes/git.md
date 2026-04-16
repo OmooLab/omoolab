@@ -26,10 +26,11 @@ flowchart LR
 
 ![](assets/git-clone.png)
 
-> 或 Bash 执行 `git clone [repo.git]`
+> 或 Bash 执行 `git clone [git-url]`  
+> 执行 `cd [repo-name]` 来进入仓库根目录
 
-> 默认不拉取大文件，以确保本地仓库体积
-> Bash 执行 `git lfs pull --include [folder]` 来下载仅需要的大文件
+> 有些仓库默认不拉取大文件，以确保本地仓库体积。  
+> Bash 执行 `git lfs pull --exclude= --include [folder]` 来下载仅需的文件夹
 
 **2. 创建自己的个人分支**
 
@@ -37,13 +38,13 @@ flowchart LR
 
 ![](assets/git-create-branch.png)
 
-> 或 Bash 执行 `git checkout -b [your-name]/[do-something]`
+> 或执行 `git checkout -b [your-name]/[do-something]`
 
 创建后，首次推送分支到远程。这样远程也有属于你的分支了
 
 ![](assets/git-publish-branch.png)
 
-> 或 Bash 执行 `git push -u origin [branch-name]`
+> 或执行 `git push -u origin [branch-name]`
 
 
 ### 通过「提交」来确认改动到「个人分支」
@@ -55,7 +56,7 @@ flowchart LR
 
 ![](assets/git-add.png)
 
-> 或 Bash 执行 `git add [file]`
+> 或执行 `git add [file]`
 
 **2. 提交（Commit）暂存改动**
 
@@ -63,7 +64,7 @@ flowchart LR
 
 ![](assets/git-commit.png)
 
-> 或 Bash 执行 `git commit -m [message]`
+> 或执行 `git commit -m [message]`
 
 **3. 推送（Push）到远程的「个人分支」**
 
@@ -71,7 +72,7 @@ flowchart LR
 
 ![](assets/git-push.png)
 
-> 或 Bash 执行 `git push`
+> 或执行 `git push`
 
 这步是工作中最常用的：一边工作，一边适时地 Add > Commit > Push
 
@@ -83,7 +84,7 @@ flowchart LR
 
 ![](assets/git-pull-origin-main.png)
 
-> 或 Bash 执行 `git pull origin main`
+> 或执行 `git pull origin main`
 
 如果冲突，会进入`([branch-name]|MERGING)` 状态，详见 [解决冲突](#解决合并冲突)
 
@@ -122,23 +123,20 @@ PR 会加入队列，等待审核通过。通过后就会合并到`main`啦。
 
 解决完冲突后，继续
 
-```bash
-git merge --continue
-```
 
-大文件处理完合并后，变成指针文件，这时候用下面指令拉回
+> 或执行 `git merge --continue`
 
-```bash
-git lfs pull
-```
 
 或者退出，不解决
 
-```bash
-git merge --abort
-```
+> 或执行 `git merge --abort`
+
+> 大文件处理完合并后，变成指针文件  
+> 执行 `git lfs pull` 拉回原始文件
+
+
+### 虽然文件 ignore 了，但因为曾经加过，所以还在被追踪
+
 取消曾经追踪过的文件，但不删除文件
 
-```bash
-git rm --cached [file]
-```
+执行 `git rm --cached [file]`

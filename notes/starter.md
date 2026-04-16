@@ -27,7 +27,7 @@ git config --global user.email  [your-email]
 初始化 lfs 以获取对大文件的支持
 
 ```bash
-git lfs install --skip-smudge
+git lfs install
 ```
 
 
