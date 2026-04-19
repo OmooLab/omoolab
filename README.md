@@ -6,6 +6,7 @@
 
 - [必装软件/工具](notes/starter.md)
 - [git 基操](notes/git.md)
+- [项目文件夹](notes/repository.md)
 
 ## 资源
 

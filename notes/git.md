@@ -4,19 +4,57 @@
 
 数字工作离不开版本管理（Version Control），你可以把 Git 想象成「时间机器」，它不仅负责记录、回溯时间点。还能允许你分裂、跳跃、合并时间线。
 
-在 Git 中，提交（Commit）就是时间点；分支（Branch）就是时间线。我们的工作流依靠提交和分支：
-
-- 仅在自己的「个人分支」工作，互不干扰
-- 通过「提交」，有选择地确认改动到个人分支
-- 不时地接收其他人在「主分支」的改动
-- 通过「合并请求」，有监督地确认改动到主分支
+在 Git 中，提交（Commit）就是时间点；分支（Branch）就是时间线。Git 有很多实践流派，偶魔采用的是 [GitHub Flow](https://docs.github.com/zh/get-started/using-github/github-flow) 简化版：
 
 ```mermaid
-flowchart LR
-  文件改动 -- 提交 --> 个人分支 -- 合并请求 --> 主分支
+---
+config:
+  theme: neutral
+  gitGraph:
+    mainBranchName: "主分支"
+    showCommitLabel: false
+---
+gitGraph
+  commit
+  commit
+  branch "个人分支-1"
+  checkout "主分支"
+  commit
+  branch "个人分支-2"
+  checkout "个人分支-1"
+  commit
+  checkout "个人分支-2"
+  commit
+  checkout "主分支"
+  merge "个人分支-1"
+  checkout "主分支"
+  merge "个人分支-2"
+  commit
 ```
 
-通过这样的双审核机制，即解放了本地创作限制，又规范了线上协作流程。避免了同步网盘方案中，高频改动导致的文件冲突问题，以及 AI 操作导致的潜在安全风险。
+为了方便初学者理解，我用直白的语言表述：
+
+1. 仅在自己的「个人分支」工作，互不干扰
+2. 通过「提交」，有选择地确认改动到个人分支
+3. 不时地更新其他人在「主分支」的改动
+4. 通过「合并请求」，有监督地确认改动到主分支
+
+```mermaid
+---
+config: 
+  theme: neutral
+---
+flowchart TD
+  changes(本地改动)
+  dev(个人分支 dev)
+  main(主分支 main)
+  changes -- 提交（自审） --> dev
+  dev -- 合并请求（终审） --> main
+  main -- 更新 --> dev
+  
+```
+
+通过双审核机制，本地改动最终更新到主分支上。这样，即解放了本地创作限制，又规范了线上协作流程。有效避免了同步网盘方案中，高频改动导致的文件冲突问题，以及 AI 操作导致的潜在安全风险。
 
 接下来，我将说明具体的操作（确保已安装 Git、VS Code，详见 [必装软件/工具](starter.md)）
 
@@ -81,9 +119,9 @@ flowchart LR
 
 这步是工作中最常用的：一边工作，一边适时地 Add > Commit > Push
 
-### 接收其他人在「主分支」的改动
+### 更新其他人在「主分支」的改动
 
-当你在自己分支工作时，其他人也在不断更新主分支`main`。有时需要对齐一下，拉取（Pull）并合并（Merge）来自主分支的更新到你自己的分支。
+当你在自己分支工作时，其他人也在不断改动主分支`main`。有时需要对齐一下，拉取（Pull）并合并（Merge）来自主分支的更新到你自己的分支。
 
 点击 … 按钮打开菜单，点击 Pull from...，并选择`origin/main`（注意不是`main`分支，它是本地的，不一定最新）
 
